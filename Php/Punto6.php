@@ -18,8 +18,13 @@
 
 
         
-        <input type="number" name="distancia" id="" placeholder="Ingrese distancia en KM" min="1" >
-        <input type="number" name="tiempo" id="" placeholder="Ingrese tiempo en Horas" min="1">
+        <input type="number" name="valor" id="" placeholder="Valor Compra" min="1" >
+        <b>seleccione si desea ponerle iva</b>
+       <select name="opcion" id="">
+           <option value="no">no</option> 
+           <option value="si">si</option>
+       </select>
+      
         <button type="submit" class="btn btn-primary" value="calcular" name="calcular">Calcular</button>
      
      
@@ -27,16 +32,26 @@
     </form>
     </div>
     <?php 
-    $velocidad=0;
+    $iva=0;
          if(isset($_POST['calcular'])){
             
-            $distancia=$_POST['distancia'];
-            $tiempo=$_POST['tiempo'];
-            $velocidad=round($distancia/$tiempo,2);         
+            $valor=$_POST['valor'];
+            $opcion=$_POST['opcion'];
+
+          switch ($opcion) {
+              case 'si':
+                $iva=$valor*1.19;
+                echo "El valor con Iva es de ".$iva;
+                  break;
+              
+              default:
+              echo"el valor sin iva es de ".$valor;
+                  break;
+          }
        
         }
     ?>
-    <label>La velocidad que se lleva es de : <b><?php echo $velocidad ?></b></label><br><br>
+     <br><br>
 
 
 
