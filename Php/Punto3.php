@@ -14,7 +14,7 @@
     <p>Dadas las 3 notas de un aprendiz, calcule la definitiva de la asignatura.</p>
 
     <div>
-    <form  name="punto2" action="../Php/Punto3.php" method="POST">
+    <form  name="punto3" action="../Php/Punto3.php" method="POST">
 
 
         

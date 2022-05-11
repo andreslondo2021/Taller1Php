@@ -7,14 +7,14 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Punto 3</title>
+    <title>Punto 4</title>
 </head>
 <body>
-    <h1>Bienvenidos al ejercicio N3#</h1>
-    <p>Dadas las 3 notas de un aprendiz, calcule la definitiva de la asignatura.</p>
+    <h1>Bienvenidos al ejercicio N4#</h1>
+    <p>Dadas las 3 notas de un aprendiz, calcule la definitiva de la asignatura ,si la primera nota tiene un valor del 20%, la segunda del 30% y la última del 50%.</p>
 
     <div>
-    <form  name="punto2" action="../Php/Punto3.php" method="POST">
+    <form  name="punto4" action="../Php/Punto4.php" method="POST">
 
 
         
@@ -28,12 +28,13 @@
     </form>
     </div>
     <?php 
+    $definitiva=0;
          if(isset($_POST['calcular'])){
             
             $nota1=$_POST['nota1'];
             $nota2=$_POST['nota2'];
             $nota3=$_POST['nota3'];
-            $definitiva=($nota1+$nota2+$nota3)/3;
+            $definitiva=($nota1*0.20)+($nota2*0.30)+($nota3*0.50);
             if($definitiva<3.5){
                 echo "la nota no alcanzo el promedio minimo";
             }
