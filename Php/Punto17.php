@@ -44,14 +44,16 @@
        
         $salarioDecrementado=0;
         $salud=0;
+        $pensiones=0;
          if(isset($_POST['calcular'])){
             
            
-            $salario=$_POST['salario'];
-            $ahorros=$_POST['ahorros'];
-           $salarioDecrementado=$salario-$ahorros;
-            $salud=$salarioDecrementado*0.875;
-
+            $Salario = $_POST["salario"];
+            $AhorroM = $_POST["ahorros"];
+            $EPS = $Salario * 0.125;
+            $Pension = $Salario * 0.16;
+            $Prestaciones = $AhorroM + $EPS + $Pension;
+            $total= number_format($Salario - $Prestaciones);
          
            
         }
@@ -59,12 +61,11 @@
     ?>
      <br><br>
     
-        <h3>salario : <?php echo $total;?> </h3><br><br>
-        <h3>valor ahorro : <?php echo $salarioDecrementado;?> </h3><br><br>
-        <h3>aporte salud : <?php echo $salud;?> </h3><br><br>
-        <h3>aporte pensiones : <?php echo $total;?> </h3><br><br>
-        <h3>salario : <?php echo $total;?> </h3><br><br>
-        <h3>total recibir : <?php echo $totalRecibir;?> </h3><br><br>
+        <h3>salario : <?php echo $Salario;?> </h3><br><br>
+        <h3>valor ahorro : <?php echo $AhorroM;?> </h3><br><br>
+        <h3>aporte salud : <?php echo $EPS;?> </h3><br><br>
+        <h3>aporte pensiones : <?php echo $Pension;?> </h3><br><br>
+        <h3>total recibir : <?php echo $total;?> </h3><br><br>
 
     <a href="../Index.html" class="btn btn-danger">Volver</a> <br><br>
 </body>
