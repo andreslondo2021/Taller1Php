@@ -32,29 +32,29 @@
     </form>
     </div>
     <?php 
-       $notafinal=0;
+       $porcentaje=0;
+       $PcantidadH=0;
+       $PcantidadM=0;
+       $cantidadTotal=0;
          if(isset($_POST['calcular'])){
             
-            $nota1=$_POST['nota1'];
-            $nota2=$_POST['nota2'];
-            $nota3=$_POST['nota3'];
-            $examen=$_POST['examen'];
-            $trabajofinal=$_POST['trabajofinal'];
+            $h=$_POST['h'];
+            $m=$_POST['m'];
 
-            $promnotas=($nota1+$nota2+$nota3)*0.55;
-            $promexamen=$examen*0.30;
-            $promtrabajo=$trabajofinal*0.15;
+            $cantidadTotal=$h+$m;
+           $PcantidadH=round((100*$h)/$cantidadTotal);
+           $PcantidadM=round((100*$m)/$cantidadTotal);
+
             
-            $notafinal=$promnotas+$promexamen+$promtrabajo;
-
+            echo "El porcentaje de hombres es :".$PcantidadH ;
+            echo "<br>El porcentaje de mujeres es :  ".$PcantidadM;
            
            
         }
         
     ?>
      <br><br>
-     <h2>La nota final es de : <?php echo $notafinal?></h2>
-
+    
 
 
     <a href="../Index.html" class="btn btn-danger">Volver</a> <br><br>
