@@ -7,11 +7,11 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Punto 1</title>
+    <title>Punto 2</title>
 </head>
 <body>
     <h1>Bienvenidos al ejercicio N2#</h1>
-    <p>Lea tres números y calcule el resultado de su suma,resta,multiplicacion,division.</p>
+    <p>Lea dos números y calcule el resultado de su suma, resta, multiplicación y división.</p>
 
     <div>
     <form  name="punto2" action="../Php/Punto2.php" method="POST">
@@ -37,13 +37,24 @@
             $num1=$_POST['num1'];
             $num2=$_POST['num2'];
             $operacion=$_POST['operacion'];
-            case 'sumar':
-                
+           switch($operacion){
+            case 'Sumar':
+                function SUMAR($num1,$num2){$resultado=$num1+$num2; return $resultado;}
+                $resultado=$num1+$num2;
                 break;
-        
+            case 'Restar':
+               $resultado=$num1-$num2;
+                break;
+            case 'Multiplicar':
+                $resultado=$num1*$num2;
+                break;
+            case 'Dividir':
+                $resultado=$num1/$num2;
+                break;
+           }
         }
     ?>
-    <label>La suma de los numeros es : <b><?php echo $suma ?></b></label>
+    <label>el resultado  es : <b><?php echo $resultado ?></b></label><br><br>
 
 
 
