@@ -43,6 +43,7 @@
               
             foreach ($_POST['aprendiz'] as $e) {
                 echo "    ".$e;
+                
             }
 
 
