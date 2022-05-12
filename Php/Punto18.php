@@ -26,8 +26,8 @@
 
 
         
-        <input type="number" name="salario" id="" placeholder="salario" min="1" >
-        <input type="number" name="ahorros" id="" placeholder="ahorros mensual" min="1" >
+        <input type="number" name="cuota" id="" placeholder="Ingre valor de la cuota" min="1" >
+      
         <br><br><br>
         
         <button type="submit" class="btn btn-primary" value="calcular" name="calcular">Calcular</button>
@@ -37,12 +37,18 @@
     </form>
     </div>
     <?php 
-      
+      $cuota1=0;
+      $cuota2=0;
+      $cuota3=0;
+      $cuota4=0;
          if(isset($_POST['calcular'])){
             
            
-            $Salario = $_POST["salario"];
-            $AhorroM = $_POST["ahorros"];
+            $cuota = $_POST["cuota"];
+            $cuota1=$cuota*0.40;
+            $cuota2=$cuota*0.25;
+            $cuota3=$cuota*0.20;
+            $cuota4=$cuota*0.15;
         
          
            
@@ -51,8 +57,10 @@
     ?>
      <br><br>
     
-        <h3>salario : <?php echo $Salario;?> </h3><br><br>
-
+        <h3>cuota 1  : <?php echo $cuota1;?> </h3><br><br>
+        <h3>cuota 2  : <?php echo $cuota2;?> </h3><br><br>
+        <h3>cuota 3 : <?php echo $cuota3;?> </h3><br><br>
+        <h3>cuota 4  : <?php echo $cuota4;?> </h3><br><br>
 
     <a href="../Index.html" class="btn btn-danger">Volver</a> <br><br>
 </body>
